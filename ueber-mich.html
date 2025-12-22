@@ -1,74 +1,85 @@
 <!doctype html>
 <html lang="de">
 <head>
-<button id="theme-toggle" class="theme-toggle" type="button">🌙 Dark</button>
-<link rel="stylesheet" href="assets/style.css" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Über mich – Visva Loganathan</title>
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/theme.js" defer></script>
+
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #111; }
-    header { padding: 22px 18px; border-bottom: 1px solid #eee; }
+    /* Nutzt dieselben Variablen wie style.css */
+    header { padding: 22px 18px; border-bottom: 1px solid var(--card-border); }
     main { max-width: 900px; margin: 0 auto; padding: 32px 18px 60px; }
+
     h1 { margin: 0; font-size: 34px; }
     nav { margin-top: 8px; }
-    nav a { margin-right: 14px; text-decoration: none; color: #555; }
+
+    nav a { margin-right: 14px; text-decoration: none; color: var(--card-text); }
     nav a:hover { text-decoration: underline; }
-    section { padding: 28px 0; border-bottom: 1px solid #f0f0f0; }
+
+    section { padding: 28px 0; border-bottom: 1px solid var(--card-border); }
     section:last-child { border-bottom: none; }
+
     h2 { margin: 0 0 10px; font-size: 24px; }
-    p { margin: 0 0 10px; color: #444; line-height: 1.5; }
+    p { margin: 0 0 10px; color: var(--sub); line-height: 1.5; }
     ul { margin: 8px 0 0 20px; }
     li { margin: 6px 0; }
-    .muted { color: #777; font-size: 14px; }
+
+    .muted { color: var(--footer); font-size: 14px; }
+
+    /* Button soll hier im Header gut sitzen (nicht absolute wie auf Startseite) */
+    header{ position: relative; }
+    .theme-toggle{
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
   </style>
 </head>
-<script src="assets/theme.js" defer></script>
+
 <body>
-  
-<header>
-  <h1>Über mich</h1>
-  <nav>
-    <a href="index.html">Start</a>
-    <a href="unterlagen.html">Lernunterlagen</a>
-  </nav>
-</header>
+  <header>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">🌙 Dark</button>
 
-<main>
+    <h1>Über mich</h1>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="unterlagen.html">Lernunterlagen</a>
+    </nav>
+  </header>
 
+  <main>
+    <section>
+      <h2>Kurzprofil</h2>
+      <p>
+        Ich bin Visva Loganathan und studiere interdisziplinäre Naturwissenschaften an der ETH Zürich. Meine fachlichen Interessen liegen an der Schnittstell von Mathematik, Physik und Biologie, insbesondere in der Anwendung mathematischer Methoden auf physikalische und biologische Fragestellungen.
+      </p>
+      <p>
+        Derzeit bin ich als Teaching Assistant für Analysis an der ETH Zürich tätig.
+      </p>
+    </section>
 
-<section>
-  <h2>Kurzprofil</h2>
-  <p>
-    Ich bin Visva Loganathan und studiere interdisziplinäre Naturwissenschaften an der ETH Zürich. Meine fachlichen Interessen liegen an der Schnittstell von Mathematik, Physik und Biologie, insbesondere in der Anwendung mathematischer Methoden auf physikalische und biologische Fragestellungen.
-  </p>
-  <p>
-    Derzeit bin ich als Teaching Assistant für Analysis an der ETH Zürich tätig.
-  </p>
-</section>
+    <section>
+      <h2>Forschung &amp; Interessen</h2>
+      <ul>
+        <li>Analysis, Differentialgleichungen &amp; Fractional Calculus</li>
+        <li>Mathematische Modellierung in Physik und Biologie</li>
+        <li>Theoretische Physik</li>
+        <li>Evolutionsbiologie &amp; Genetik</li>
+      </ul>
+      <p class="muted">
+        Ein eigener Forschungs- und Projektbereich auf der Website ist geplant.
+      </p>
+    </section>
 
-<section>
-  <h2>Forschung & Interessen</h2>
-  <ul>
-    <li>Analysis, Differentialgleichungen & Fractional Calculus</li>
-    <li>Mathematische Modellierung in Physik und Biologie</li>
-    <li>Theoretische Physik </li>
-    <li>Evolutionsbiologie & Genetik</li>
-  </ul>
-  <p class="muted">
-    Ein eigener Forschungs- und Projektbereich auf der Website ist geplant.
-  </p>
-</section>
-
-  
-  
-  <section>
-    <h2>Kontakt</h2>
-    <p>
-      E-Mail: <strong>vloganathan@student.ethz.ch</strong>
-    </p>
-  </section>
-
-</main>
+    <section>
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <strong>vloganathan@student.ethz.ch</strong>
+      </p>
+    </section>
+  </main>
 </body>
 </html>
