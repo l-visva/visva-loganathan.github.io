@@ -111,3 +111,15 @@ h1 {
   transform: translateY(-1px);
 }
 
+
+/* Einheitliche Linkfarbe überall (z.B. auch Lab Reports) */
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
