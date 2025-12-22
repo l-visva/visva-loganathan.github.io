@@ -1,228 +1,188 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lernunterlagen – Visva Loganathan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lernunterlagen – Visva Loganathan</title>
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/theme.js" defer></script>
+
   <style>
-  body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    margin: 0;
-    color: #111;
-  }
+    /* Layout ähnlich wie ueber-mich.html, aber dark-mode-friendly */
+    header { padding: 22px 18px; border-bottom: 1px solid var(--card-border); position: relative; }
+    main { max-width: 900px; margin: 0 auto; padding: 32px 18px 60px; }
 
-  header {
-    padding: 22px 18px;
-    border-bottom: 1px solid #eee;
-  }
+    h1 { margin: 0; font-size: 34px; }
+    nav { margin-top: 8px; }
 
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 32px 18px 60px;
-  }
+    nav a { margin-right: 14px; text-decoration: none; color: var(--card-text); }
+    nav a:hover { text-decoration: underline; }
 
-  h1 {
-    margin: 0;
-    font-size: 34px;
-  }
+    section { padding: 28px 0; border-bottom: 1px solid var(--card-border); }
+    section:last-child { border-bottom: none; }
 
-  nav {
-    margin-top: 8px;
-  }
+    h2 { margin: 0 0 10px; font-size: 24px; }
+    p { margin: 0 0 10px; color: var(--sub); line-height: 1.5; }
 
-  nav a {
-    margin-right: 14px;
-    text-decoration: none;
-    color: #555;
-  }
+    ul { margin: 8px 0 0 20px; }
+    li { margin: 6px 0; }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+    .muted { color: var(--footer); font-size: 14px; }
 
-  section {
-    padding: 28px 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
+    /* Toggle Button im Header */
+    .theme-toggle{
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
 
-  section:last-child {
-    border-bottom: none;
-  }
+    /* Tabellen-Styling (dark-mode-ready) */
+    table.docs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
 
-  h2 {
-    margin: 0 0 10px;
-    font-size: 24px;
-  }
+    table.docs th,
+    table.docs td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--card-border);
+      text-align: left;
+    }
 
-  p {
-    margin: 0 0 10px;
-    color: #444;
-  }
+    table.docs thead th {
+      border-bottom: 1px solid var(--card-hover-border);
+      font-weight: 700;
+      color: var(--text);
+    }
 
-  ul {
-    margin: 8px 0 0 20px;
-  }
+    table.docs a {
+      text-decoration: none;
+      color: var(--text);
+    }
 
-  li {
-    margin: 6px 0;
-  }
+    table.docs a:hover {
+      text-decoration: underline;
+    }
 
-  .muted {
-    color: #777;
-    font-size: 14px;
-  }
+    table.docs tbody tr:hover {
+      background: rgba(127, 127, 127, 0.08);
+    }
 
-  table.docs {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-  }
-
-  table.docs th,
-  table.docs td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-  }
-
-  table.docs thead th {
-    border-bottom: 1px solid #ddd;
-    font-weight: 700;
-  }
-
-  table.docs a {
-    text-decoration: none;
-  }
-
-  table.docs a:hover {
-    text-decoration: underline;
-  }
-</style>
+    :root[data-theme="dark"] table.docs tbody tr:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">🌙 Dark</button>
 
-<header>
-  <h1>Lernunterlagen</h1>
-  <nav>
-    <a href="index.html">Start</a>
-    <a href="ueber-mich.html">Über mich</a>
-  </nav>
-</header>
+    <h1>Lernunterlagen</h1>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="ueber-mich.html">Über mich</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
+    <section>
+      <h2>Analysis A</h2>
+      <p>Übungszettel und Lösungen aus den Übungsstunden.</p>
 
-<section>
-  <h2>Analysis A</h2>
-  <p>Übungszettel und Lösungen aus den Übungsstunden.</p>
+      <table class="docs">
+        <thead>
+          <tr>
+            <th>Pre</th>
+            <th>Beschriftet</th>
+          </tr>
+        </thead>
 
-  <table class="docs">
-    <thead>
-      <tr>
-        <th>Pre</th>
-        <th>Beschriftet</th>
-      </tr>
-    </thead>
+        <tbody>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_01_Pre.pdf" target="_blank" rel="noopener">ÜS 1 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_01_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 1 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_02_Pre.pdf" target="_blank" rel="noopener">ÜS 2 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_02_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 2 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_03_Pre.pdf" target="_blank" rel="noopener">ÜS 3 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_03_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 3 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_04_Pre.pdf" target="_blank" rel="noopener">ÜS 4 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_04_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 4 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_05_Pre.pdf" target="_blank" rel="noopener">ÜS 5 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_05_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 5 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_06_Pre.pdf" target="_blank" rel="noopener">ÜS 6 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_06_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 6 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_07_Pre.pdf" target="_blank" rel="noopener">ÜS 7 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_07_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 7 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_08_Pre.pdf" target="_blank" rel="noopener">ÜS 8 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_08_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 8 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_09_Pre.pdf" target="_blank" rel="noopener">ÜS 9 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_09_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 9 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_10_Pre.pdf" target="_blank" rel="noopener">ÜS 10 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_10_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 10 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_11_Pre.pdf" target="_blank" rel="noopener">ÜS 11 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_11_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 11 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_12_Pre.pdf" target="_blank" rel="noopener">ÜS 12 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_12_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 12 Beschriftet</a></td>
+          </tr>
+          <tr>
+            <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_13_Pre.pdf" target="_blank" rel="noopener">ÜS 13 Pre</a></td>
+            <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_13_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 13 Beschriftet</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <tbody>
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_01_Pre.pdf" target="_blank" rel="noopener">ÜS 1 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_01_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 1 Beschriftet</a></td>
-      </tr>
+    <section>
+      <h2>Analysis B</h2>
+      <p>Material und Übungsunterlagen.</p>
+      <ul>
+        <li>ÜS 1 (PDF folgt)</li>
+      </ul>
+    </section>
 
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_02_Pre.pdf" target="_blank" rel="noopener">ÜS 2 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_02_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 2 Beschriftet</a></td>
-      </tr>
+    <section>
+      <h2>OACP I Lab Reports</h2>
+      <ul>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_1a.pdf" target="_blank" rel="noopener">Report 1a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_2a.pdf" target="_blank" rel="noopener">Report 2a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_3a.pdf" target="_blank" rel="noopener">Report 3a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_4a.pdf" target="_blank" rel="noopener">Report 4a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_5a.pdf" target="_blank" rel="noopener">Report 5a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_6c.pdf" target="_blank" rel="noopener">Report 6c</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_7a.pdf" target="_blank" rel="noopener">Report 7a</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_8c.pdf" target="_blank" rel="noopener">Report 8c</a></li>
+        <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_9b.pdf" target="_blank" rel="noopener">Report 9b</a></li>
+      </ul>
+    </section>
 
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_03_Pre.pdf" target="_blank" rel="noopener">ÜS 3 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_03_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 3 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_04_Pre.pdf" target="_blank" rel="noopener">ÜS 4 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_04_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 4 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_05_Pre.pdf" target="_blank" rel="noopener">ÜS 5 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_05_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 5 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_06_Pre.pdf" target="_blank" rel="noopener">ÜS 6 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_06_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 6 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_07_Pre.pdf" target="_blank" rel="noopener">ÜS 7 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_07_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 7 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_08_Pre.pdf" target="_blank" rel="noopener">ÜS 8 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_08_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 8 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_09_Pre.pdf" target="_blank" rel="noopener">ÜS 9 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_09_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 9 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_10_Pre.pdf" target="_blank" rel="noopener">ÜS 10 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_10_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 10 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_11_Pre.pdf" target="_blank" rel="noopener">ÜS 11 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_11_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 11 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_12_Pre.pdf" target="_blank" rel="noopener">ÜS 12 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_12_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 12 Beschriftet</a></td>
-      </tr>
-
-      <tr>
-        <td><a href="unterlagen/analysis-a/pre/Analysis_A_US_13_Pre.pdf" target="_blank" rel="noopener">ÜS 13 Pre</a></td>
-        <td><a href="unterlagen/analysis-a/beschriftet/Analysis_A_US_13_Beschriftet.pdf" target="_blank" rel="noopener">ÜS 13 Beschriftet</a></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
-
-  <section>
-    <h2>Analysis B</h2>
-    <p>Material und Übungsunterlagen.</p>
-    <ul>
-      <li>ÜS 1 (PDF folgt)</li>
-    </ul>
-  </section>
-
- <section>
-  <h2>OACP I Lab Reports</h2>
-  <ul>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_1a.pdf" target="_blank" rel="noopener">Report 1a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_2a.pdf" target="_blank" rel="noopener">Report 2a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_3a.pdf" target="_blank" rel="noopener">Report 3a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_4a.pdf" target="_blank" rel="noopener">Report 4a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_5a.pdf" target="_blank" rel="noopener">Report 5a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_6c.pdf" target="_blank" rel="noopener">Report 6c</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_7a.pdf" target="_blank" rel="noopener">Report 7a</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_8c.pdf" target="_blank" rel="noopener">Report 8c</a></li>
-    <li><a href="unterlagen/oacp1/OACPI_FS24_VISVA_LOGANATHAN_9b.pdf" target="_blank" rel="noopener">Report 9b</a></li>
-  </ul>
-</section>
-
-
-  <p class="muted">
-    Weitere Inhalte (Zusammenfassungen, alte Reports) werden laufend ergänzt.
-  </p>
-
-</main>
+    <p class="muted">
+      Weitere Inhalte (Zusammenfassungen, alte Reports) werden laufend ergänzt.
+    </p>
+  </main>
 </body>
 </html>
