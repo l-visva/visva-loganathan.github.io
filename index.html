@@ -5,17 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Visva Loganathan</title>
 
-  <!-- Shared CSS -->
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css?v=1" />
+  <script src="assets/theme.js" defer></script>
 </head>
 
 <body>
-  <main>
-    <!-- Dark Mode Button -->
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">
-      🌙 Dark
-    </button>
+  <!-- Global Header (wie Unterseiten) -->
+  <header class="site-header">
+    <div class="site-inner">
+      <a class="brand" href="index.html">Visva Loganathan</a>
 
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Start</a>
+        <a href="unterlagen.html" class="nav-link">Lernunterlagen</a>
+        <a href="ueber-mich.html" class="nav-link">Über mich</a>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">
+        🌙 Dark
+      </button>
+    </div>
+  </header>
+
+  <main>
     <h1>Visva Loganathan</h1>
     <p class="sub">ETH Zürich · Schweiz</p>
 
@@ -31,13 +43,7 @@
       </a>
     </div>
 
-    <p class="footer">
-      (Weitere Bereiche kommen später noch dazu.)
-    </p>
+    <p class="footer">(Weitere Bereiche kommen später noch dazu.)</p>
   </main>
-
-  <!-- Shared JS (am Ende laden) -->
-  <script src="assets/theme.js" defer></script>
 </body>
 </html>
-
