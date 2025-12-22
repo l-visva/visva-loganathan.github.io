@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Visva Loganathan</title>
 
-  <!-- Shared CSS (mit Cache-Buster!) -->
-  <link rel="stylesheet" href="assets/style.css?v=7" />
+  <link rel="stylesheet" href="assets/style.css?v=9" />
   <script src="assets/theme.js" defer></script>
+
+  <!-- Nur für index.html: Button rechts vom Titel -->
+  <style>
+    .home-hero{
+      display: flex;
+      align-items: flex-start;         /* Button oben am Titel */
+      justify-content: space-between;  /* Titel links, Button rechts */
+      gap: 16px;
+    }
+    .home-hero h1{
+      margin: 0 0 8px; /* bleibt wie vorher */
+    }
+    /* Bei sehr schmalen Screens: Button unter den Titel */
+    @media (max-width: 520px){
+      .home-hero{ flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 
 <body>
   <main>
-    <button id="theme-toggle" class="theme-toggle theme-toggle--home" type="button" aria-label="Theme umschalten">
-      🌙 Dark
-    </button>
+    <div class="home-hero">
+      <div>
+        <h1>Visva Loganathan</h1>
+        <p class="sub">ETH Zürich · Schweiz</p>
+      </div>
 
-    <h1>Visva Loganathan</h1>
-    <p class="sub">ETH Zürich · Schweiz</p>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">
+        🌙 Dark
+      </button>
+    </div>
 
     <div class="grid">
       <a class="card" href="unterlagen.html">
