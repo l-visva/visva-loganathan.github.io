@@ -123,3 +123,14 @@ a:hover {
 }
 
 
+
+/* Force link styling in content (auch für UL-Listen wie OACP Reports) */
+main a, section a, ul a, li a {
+  color: var(--text) !important;
+  text-decoration: none;
+}
+
+main a:hover, section a:hover, ul a:hover, li a:hover {
+  text-decoration: underline;
+}
+
