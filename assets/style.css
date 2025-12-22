@@ -1,36 +1,50 @@
-/* 1) Theme-Variablen (Light / Dark) */
-:root{
+/* =========================
+   Theme variables
+   ========================= */
+
+:root {
   --bg: #ffffff;
   --text: #111111;
   --sub: #444444;
+
   --card-border: #eeeeee;
-  --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
   --card-hover-border: #dddddd;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   --card-text: #555555;
+
   --footer: #777777;
 
   --btn-bg: #ffffff;
   --btn-border: #e6e6e6;
 }
 
-:root[data-theme="dark"]{
+:root[data-theme="dark"] {
   --bg: #0b0f14;
   --text: #e8eef5;
   --sub: #a9b4c0;
+
   --card-border: #243042;
-  --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
   --card-hover-border: #33435b;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --card-text: #a9b4c0;
+
   --footer: #8fa0b2;
 
   --btn-bg: #0f1520;
   --btn-border: #243042;
 }
 
-/* 2) Dein bestehendes Styling (nur auf Variablen umgestellt) */
+/* =========================
+   Base
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -38,10 +52,10 @@ body {
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 48px 18px;
-  position: relative; /* damit der Button oben rechts sitzt */
+  padding: 32px 18px 60px;
 }
 
+/* Headings / text */
 h1 {
   font-size: 46px;
   margin: 0 0 8px;
@@ -54,6 +68,38 @@ h1 {
   font-size: 18px;
 }
 
+.footer {
+  margin-top: 34px;
+  color: var(--footer);
+  font-size: 14px;
+}
+
+/* =========================
+   Links (global)
+   ========================= */
+
+a,
+a:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Optional: nav links slightly muted */
+.site-nav .nav-link,
+.site-nav .nav-link:visited {
+  color: var(--card-text);
+  text-decoration: none;
+}
+
+/* =========================
+   Cards (Startseite)
+   ========================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -65,10 +111,10 @@ h1 {
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 18px;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
   box-shadow: var(--card-shadow);
-  transition: transform .12s ease, border-color .12s ease;
+  transition: transform 0.12s ease, border-color 0.12s ease;
 }
 
 .card:hover {
@@ -87,63 +133,16 @@ h1 {
   line-height: 1.4;
 }
 
-.footer {
-  margin-top: 34px;
-  color: var(--footer);
-  font-size: 14px;
-}
+/* =========================
+   Global header / navigation
+   ========================= */
 
-/* 3) Toggle Button */
-.theme-toggle{
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  color: var(--text);
-  padding: 8px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.theme-toggle:hover{
-  transform: translateY(-1px);
-}
-
-
-/* Einheitliche Linkfarbe überall (z.B. auch Lab Reports) */
-a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-
-
-/* Force link styling in content (auch für UL-Listen wie OACP Reports) */
-main a, section a, ul a, li a {
-  color: var(--text) !important;
-  text-decoration: none;
-}
-
-main a:hover, section a:hover, ul a:hover, li a:hover {
-  text-decoration: underline;
-}
-
-
-
-
-/* ===== Global Header / Navigation ===== */
-.site-header{
+.site-header {
   border-bottom: 1px solid var(--card-border);
   background: var(--bg);
 }
 
-.site-inner{
+.site-inner {
   max-width: 900px;
   margin: 0 auto;
   padding: 18px 18px;
@@ -152,7 +151,7 @@ main a:hover, section a:hover, ul a:hover, li a:hover {
   gap: 14px;
 }
 
-.brand{
+.brand {
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -160,33 +159,29 @@ main a:hover, section a:hover, ul a:hover, li a:hover {
   white-space: nowrap;
 }
 
-.site-nav{
+.site-nav {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin-left: 8px;
 }
 
-.nav-link{
-  color: var(--card-text);
-  text-decoration: none;
+.nav-link {
   padding: 6px 8px;
   border-radius: 10px;
 }
 
-.nav-link:hover{
-  text-decoration: underline;
-}
-
-.nav-link.active{
+.nav-link.active {
   color: var(--text);
   border: 1px solid var(--card-border);
 }
 
-/* Theme Button im Header (nicht mehr absolute position) */
-.theme-toggle{
-  margin-left: auto;
-  position: static; /* überschreibt dein altes absolute */
+/* =========================
+   Theme toggle button
+   ========================= */
+
+.theme-toggle {
+  margin-left: auto; /* rechts im Header */
   border: 1px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--text);
@@ -194,4 +189,8 @@ main a:hover, section a:hover, ul a:hover, li a:hover {
   border-radius: 999px;
   cursor: pointer;
   font-size: 14px;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
 }
