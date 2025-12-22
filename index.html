@@ -5,100 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Visva Loganathan</title>
 
-  <style>
-    /* 1) Theme-Variablen (Light / Dark) */
-    :root{
-      --bg: #ffffff;
-      --text: #111111;
-      --sub: #444444;
-      --card-border: #eeeeee;
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      --card-hover-border: #dddddd;
-      --card-text: #555555;
-      --footer: #777777;
-
-      --btn-bg: #ffffff;
-      --btn-border: #e6e6e6;
-    }
-
-    :root[data-theme="dark"]{
-      --bg: #0b0f14;
-      --text: #e8eef5;
-      --sub: #a9b4c0;
-      --card-border: #243042;
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --card-hover-border: #33435b;
-      --card-text: #a9b4c0;
-      --footer: #8fa0b2;
-
-      --btn-bg: #0f1520;
-      --btn-border: #243042;
-    }
-
-    /* 2) Dein bestehendes Styling (nur auf Variablen umgestellt) */
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 18px;
-      position: relative; /* damit der Button oben rechts sitzt */
-    }
-
-    h1 { font-size: 46px; margin: 0 0 8px; letter-spacing: -0.02em; }
-
-    .sub { margin: 0 0 28px; color: var(--sub); font-size: 18px; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .card {
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 18px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--card-shadow);
-      transition: transform .12s ease, border-color .12s ease;
-    }
-
-    .card:hover {
-      border-color: var(--card-hover-border);
-      transform: translateY(-1px);
-    }
-
-    .card h2 { margin: 0 0 6px; font-size: 20px; }
-
-    .card p { margin: 0; color: var(--card-text); line-height: 1.4; }
-
-    .footer { margin-top: 34px; color: var(--footer); font-size: 14px; }
-
-    /* 3) Toggle Button */
-    .theme-toggle{
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      border: 1px solid var(--btn-border);
-      background: var(--btn-bg);
-      color: var(--text);
-      padding: 8px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .theme-toggle:hover{
-      transform: translateY(-1px);
-    }
-  </style>
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
@@ -128,33 +36,8 @@
     </p>
   </main>
 
-  <!-- Dark Mode Logik -->
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const btn = document.getElementById("theme-toggle");
-
-      // 1) Start: gespeichertes Theme oder System-Theme
-      const saved = localStorage.getItem("theme");
-      const systemPrefersDark =
-        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      const initial = saved ? saved : (systemPrefersDark ? "dark" : "light");
-      setTheme(initial);
-
-      // 2) Umschalten + speichern
-      btn.addEventListener("click", () => {
-        const current = root.getAttribute("data-theme") || "light";
-        const next = current === "dark" ? "light" : "dark";
-        setTheme(next);
-        localStorage.setItem("theme", next);
-      });
-
-      function setTheme(theme){
-        root.setAttribute("data-theme", theme);
-        btn.textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
-      }
-    })();
-  </script>
+  <!-- Shared JS (am Ende laden) -->
+  <script src="assets/theme.js" defer></script>
 </body>
 </html>
+
