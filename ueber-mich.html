@@ -29,6 +29,38 @@
 
     .muted { color: var(--footer); font-size: 14px; }
 
+
+    /* Kurzprofil mit Portrait */
+.profile-section {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 36px;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 180px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Auf kleinen Bildschirmen untereinander */
+@media (max-width: 700px) {
+  .profile-section {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    width: 160px;
+    order: -1;
+    margin: 0 auto 10px;
+  }
+}
+
+    
     /* Button soll hier im Header gut sitzen (nicht absolute wie auf Startseite) */
     header{ position: relative; }
     .theme-toggle{
